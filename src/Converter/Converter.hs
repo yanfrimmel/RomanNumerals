@@ -5,8 +5,8 @@ import Data.Tuple
 
 type RomanNumeralsTuple = (String,Int)
 
-findRomanNumberRange :: Int -> RomanNumeralsTuple
-findRomanNumberRange num
+findRomanNumberTuple :: Int -> RomanNumeralsTuple
+findRomanNumberTuple num
   | num >= 1000  =  ("M",1000)
   | num >= 900   =  ("CM",900)
   | num >= 500   =  ("D",500)
@@ -22,11 +22,11 @@ findRomanNumberRange num
   | num >= 1     =  ("I",1)
   | otherwise    =  ("",0)
 
-fromIntToRomanNumeralsEnum :: Int -> String
-fromIntToRomanNumeralsEnum num
- | num > 0 = fst inRomanTuple ++ fromIntToRomanNumeralsEnum (num - snd inRomanTuple)
+fromIntToRomanNumeralsString :: Int -> String
+fromIntToRomanNumeralsString num
+ | num > 0 = fst romanTuple ++ fromIntToRomanNumeralsString (num - snd romanTuple)
  | otherwise = ""
- where inRomanTuple = findRomanNumberRange num
+ where romanTuple = findRomanNumberTuple num
 
 convert :: Int -> String
-convert  num =  fromIntToRomanNumeralsEnum $ num
+convert  num =  fromIntToRomanNumeralsString $ num
