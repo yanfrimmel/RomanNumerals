@@ -29,7 +29,6 @@ executable RomanNumerals
 
 test-suite RomanNumerals-test
   type:                exitcode-stdio-1.0
-  exposed-modules:     Converter.ConverterSpec
   hs-source-dirs:      test
   main-is:             Spec.hs
   build-depends:       base
