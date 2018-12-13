@@ -1,3 +1,3 @@
 # RomanNumerals
 
-Integer to Roman numerals converter writen in Haskell
+Integer to Roman numerals converter written in Haskell
